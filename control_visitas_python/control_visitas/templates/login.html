@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ingresar · Control de Visitas</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="login-body">
+<div id="toast" class="toast"></div>
+<form class="login-card" id="loginForm">
+  <div class="brand-logo big"><i class="fa-solid fa-building-user"></i></div>
+  <h2>Control de Visitas</h2>
+  <p class="muted">Inicia sesión para continuar</p>
+  <label>Usuario</label>
+  <input id="usuario" placeholder="Usuario" autofocus autocomplete="username">
+  <label>Contraseña</label>
+  <input id="password" type="password" placeholder="Contraseña" autocomplete="current-password">
+  <button class="btn btn-green" type="submit" style="width:100%;margin-top:14px">Ingresar</button>
+  <p class="hint">Demo: <b>Diego</b> / <b>12345</b></p>
+</form>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

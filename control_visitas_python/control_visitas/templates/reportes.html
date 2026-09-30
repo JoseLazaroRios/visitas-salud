@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Reportes · Control de Visitas{% endblock %}
+{% block h1 %}Reportes{% endblock %}
+{% block sub %}Resumen de permanencia, días y despachos.{% endblock %}
+{% block content %}
+<button class="btn btn-green" id="btnActualizar">Actualizar reportes</button>
+<section class="report-grid">
+  <div class="panel">
+    <h3>Tiempo promedio</h3>
+    <div class="big" id="promedio">—</div>
+    <p class="muted">Calculado con visitas que ya registraron salida.</p>
+  </div>
+  <div class="panel"><h3>Visitas por día</h3><div id="porDia"></div></div>
+  <div class="panel"><h3>Visitas por despacho</h3><div id="porDespacho"></div></div>
+</section>
+{% endblock %}

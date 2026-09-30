@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Inicio · Control de Visitas{% endblock %}
+{% block h1 %}Inicio{% endblock %}
+{% block sub %}Registra una nueva visita o revisa el estado del día.{% endblock %}
+{% block content %}
+<section class="cards">
+  <div class="stat purple"><div><small>Total</small><b id="total">0</b></div><i class="fa-solid fa-users"></i></div>
+  <div class="stat orange"><div><small>En sede</small><b id="activos">0</b></div><i class="fa-solid fa-person-walking"></i></div>
+  <div class="stat blue"><div><small>Finalizados</small><b id="finalizados">0</b></div><i class="fa-solid fa-circle-check"></i></div>
+</section>
+
+<section class="panel">
+  <h3>Registrar visitante</h3>
+  <div class="grid2">
+    <div><label>Nombre completo</label><input id="nombre" placeholder="Nombre y apellidos"></div>
+    <div><label>DNI</label><input id="dni" placeholder="8 a 12 dígitos" inputmode="numeric" maxlength="12"></div>
+    <div><label>Persona a visitar</label><input id="visitado" placeholder="Nombre del anfitrión"></div>
+    <div><label>Despacho</label><input id="despacho" placeholder="Gerencia, Legal, RR.HH…"></div>
+  </div>
+  <button class="btn btn-green" id="btnEntrada"><i class="fa-solid fa-door-open"></i> Registrar entrada</button>
+</section>
+
+<section class="panel" id="panelActivos" style="display:none">
+  <h3>En sede ahora</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Nombre</th><th>DNI</th><th>Visitado</th><th>Despacho</th><th>Entrada</th><th></th></tr></thead>
+    <tbody id="tablaActivos"></tbody>
+  </table></div>
+</section>
+{% endblock %}

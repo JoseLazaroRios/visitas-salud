@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Registros · Control de Visitas{% endblock %}
+{% block h1 %}Registros{% endblock %}
+{% block sub %}Consulta, filtra y exporta el historial de visitantes.{% endblock %}
+{% block content %}
+<section class="panel filters">
+  <div><label>Fecha</label><input type="date" id="filtroFecha"></div>
+  <div><label>Despacho</label><input id="filtroDespacho" placeholder="Filtrar despacho"></div>
+  <button class="btn btn-green" id="btnFiltrar">Filtrar</button>
+  <button class="btn btn-soft" id="btnLimpiar">Limpiar</button>
+  <button class="btn btn-soft" id="btnCSV">Exportar CSV</button>
+</section>
+
+<section class="table-card table-wrap">
+  <table>
+    <thead><tr>
+      <th>Nombre</th><th>DNI</th><th>Visitado</th><th>Despacho</th><th>Fecha</th>
+      <th>Entrada</th><th>Salida</th><th>Tiempo</th><th>Estado</th><th></th>
+    </tr></thead>
+    <tbody id="tabla"></tbody>
+  </table>
+</section>
+{% endblock %}

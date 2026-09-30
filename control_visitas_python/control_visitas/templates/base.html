@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Control de Visitas{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body data-page="{{ page }}">
+<div id="toast" class="toast"></div>
+
+<aside class="sidebar">
+  <div class="brand">
+    <div class="brand-logo"><i class="fa-solid fa-building-user"></i></div>
+    <div><strong>Control</strong><small>Visitas</small></div>
+  </div>
+  <nav>
+    <a href="{{ url_for('inicio') }}"    class="{{ 'active' if page=='inicio' }}"><i class="fa-solid fa-house"></i> Inicio</a>
+    <a href="{{ url_for('registros') }}" class="{{ 'active' if page=='registros' }}"><i class="fa-solid fa-clipboard-list"></i> Registros</a>
+    <a href="{{ url_for('reportes') }}"  class="{{ 'active' if page=='reportes' }}"><i class="fa-solid fa-chart-column"></i> Reportes</a>
+  </nav>
+  <a class="logout" href="{{ url_for('logout') }}"><i class="fa-solid fa-right-from-bracket"></i> Cerrar sesión</a>
+</aside>
+
+<main class="main">
+  <header class="topbar">
+    <div>
+      <h1>{% block h1 %}{% endblock %}</h1>
+      <p class="muted">{% block sub %}{% endblock %}</p>
+    </div>
+    <div class="top-right">
+      <div class="search"><i class="fa-solid fa-magnifying-glass"></i>
+        <input id="buscarGlobal" placeholder="Buscar visitante, DNI o despacho…"></div>
+      <div class="avatar" title="{{ session.usuario }}"><i class="fa-solid fa-user"></i></div>
+    </div>
+  </header>
+  {% block content %}{% endblock %}
+</main>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
